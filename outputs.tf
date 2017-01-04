@@ -1,4 +1,4 @@
-// module terraform_user_data
+// module terraform_rancher_user_data
 
 // The fully assembled cloud-config YAML file to be used as user data.
 output "rendered" {
