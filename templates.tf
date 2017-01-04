@@ -30,6 +30,7 @@ EOS
 // content, along with any leading whitespace.
 data "template_file" "rancher_user_data_template" {
   template = <<EOS
+#cloud-config
 rancher:
   services:
 ${join("", var.rancher_service_entries)}
