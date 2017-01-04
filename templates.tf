@@ -28,13 +28,13 @@ EOS
 //
 // Empty strings are replaced with "~~" - these are trimmed from the final
 // content, along with any leading whitespace.
-data "template_file" "rancher_service_data" {
+data "template_file" "rancher_user_data_template" {
   template = <<EOS
 rancher:
   services:
 ${join("", var.rancher_service_entries)}
 write_files:
-${length(var.write_files_entries) > 0 ? join("", var.write_files_entries), : "~~" }
+${length(var.write_files_entries) > 0 ? join("", var.write_files_entries) : "~~" }
 ${var.use_ecr == "true" ? data.template_file.ecr_creds_store_data.rendered : "~~" }
 runcmd:
 ${var.use_ecr == "true" ? data.template_file.ecr_creds_store_wget_runcmd.rendered : "~~" }
