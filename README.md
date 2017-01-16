@@ -51,6 +51,7 @@ Usage Example (in AWS):
 |------|-------------|:-----:|:-----:|
 | write_files_entries | A list of `write_files` entries to assemble into a complete `write_files` section. | `<list>` | no |
 | rancher_service_entries | A list of Rancher/Docker Compose services entries to assemble into the final `rancher` section in the config. | - | yes |
+| use_ecr | Use ECR. This downloads the [AWS ECR Credential Helper](https://github.com/awslabs/amazon-ecr-credential-helper), and adds it as a credential store in `/home/rancher/.docker/config.json`. This will allow the use of ECR without the need to ship ECR credentials. | `false` | no |
 
 ## Outputs
 
